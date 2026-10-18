@@ -1,0 +1,7 @@
+__pycache__/
+*.db
+.venv/
+.idea/
+.secret_key
+.env
+uploads/

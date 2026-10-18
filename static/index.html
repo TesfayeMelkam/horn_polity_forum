@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horn Polity Forum – Political Science of Ethiopia &amp; the Horn</title>
+  <meta name="description" content="Horn Polity Forum – research-driven analysis of power, institutions and conflict in Ethiopia and the Horn of Africa.">
+  <meta name="theme-color" content="#f97316">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/static/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/img/icon-192.png">
+  <link rel="alternate" type="application/rss+xml" title="Horn Polity Forum" href="/rss.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Noto+Sans+Ethiopic:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+<div id="progress"></div>
+<div id="announce" class="announce hidden"></div>
+<header class="nav"><div class="container nav-in">
+  <a class="brand" href="#/"><span class="brand-mark">HP</span>Horn Polity Forum</a>
+  <button class="icon-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
+  <nav class="nav-links" id="nav-links">
+    <a href="#/" data-r="home" data-i18n="nav_home">Home</a>
+    <a href="#/library" data-r="library" data-i18n="nav_library">Library</a>
+    <a href="#/events" data-r="events" data-i18n="nav_events">Events</a>
+    <a href="#/about" data-r="about" data-i18n="nav_about">About</a>
+    <a href="#/membership" data-r="membership" data-i18n="nav_membership">Membership</a>
+    <a href="#/contact" data-r="contact" data-i18n="nav_contact">Contact</a>
+    <select id="lang-sel" class="lang-sel" aria-label="Language" data-i18n-aria="lang_label">
+      <option value="en">English</option><option value="am">አማርኛ</option><option value="om">Afaan Oromoo</option><option value="ar">العربية</option></select>
+    <div class="comfort-wrap"><button class="icon-btn" id="comfort-btn" aria-label="Comfort" aria-expanded="false" data-i18n-aria="comfort" title="Comfort">Aa</button>
+      <div class="comfort hidden" id="comfort-panel" role="dialog">
+        <div class="cf-row"><span data-i18n="c_theme">Theme</span><div class="seg" id="cf-theme"><button data-v="dark" data-i18n="c_dark">Dark</button><button data-v="light" data-i18n="c_light">Light</button></div></div>
+        <div class="cf-row"><span data-i18n="c_size">Page size</span><div class="seg" id="cf-size"><button data-v="90">90%</button><button data-v="100">100%</button><button data-v="115">115%</button><button data-v="130">130%</button></div></div>
+        <div class="cf-row"><span data-i18n="c_spacing">Line spacing</span><div class="seg" id="cf-space"><button data-v="normal" data-i18n="c_normal">Normal</button><button data-v="relaxed" data-i18n="c_relaxed">Relaxed</button></div></div>
+        <label class="cf-row"><span data-i18n="c_motion">Reduce animations</span><input type="checkbox" id="cf-motion"></label>
+        <label class="cf-row"><span data-i18n="c_contrast">High contrast</span><input type="checkbox" id="cf-contrast"></label>
+        <button class="btn btn-ghost" id="cf-reset" data-i18n="c_reset">Reset</button></div></div>
+    <a class="btn btn-primary" id="acct-btn" href="#/account" data-r="account" data-i18n="signin">Sign in</a>
+  </nav>
+</div></header>
+
+<main id="main">
+<!-- HOME -->
+<section id="view-home" class="view">
+  <div class="slider" id="slider" aria-roledescription="carousel"></div>
+  <div class="container"><div class="stats-strip" id="hero-stats"></div></div>
+  <div class="container layout">
+    <section id="articles">
+      <div class="controls">
+        <div class="search"><span class="ico">⌕</span>
+          <input id="search" type="search" data-i18n-ph="search_ph" placeholder="Search essays, tags, topics…" autocomplete="off" aria-label="Search"><kbd>/</kbd>
+          <div class="suggest hidden" id="suggest"></div></div>
+        <div class="row" id="chips"></div>
+        <div class="row"><span class="result-note" id="result-note" style="margin:0"></span>
+          <select class="select" id="lang-filter" aria-label="Article language"></select>
+          <select class="select" id="sort" aria-label="Sort"><option value="new" data-i18n="sort_new">Newest</option><option value="popular" data-i18n="sort_pop">Most popular</option></select></div>
+      </div>
+      <div class="grid" id="grid"></div>
+      <button class="btn btn-ghost more hidden" id="more" data-i18n="load_more">Load more</button>
+    </section>
+    <aside>
+      <div class="side-card" id="subscribe"><h4 data-i18n="bulletin">Horn Polity Bulletin</h4><p data-i18n="bulletin_p">Curated essays and reading lists.</p>
+        <form id="news-form" class="stack"><input class="input" type="email" id="news-email" data-i18n-ph="email_addr" placeholder="Email address" required>
+          <button class="btn btn-primary" type="submit">✉ <span data-i18n="subscribe">Subscribe</span></button><div class="msg" id="news-msg"></div></form></div>
+      <div class="side-card hidden" id="reco-card"><h4>✨ <span data-i18n="reco_h">Recommended for you</span></h4><p data-i18n="reco_p">Based on what you read.</p><div id="reco"></div></div>
+      <div class="side-card hidden" id="ev-card"><h4>📅 <span data-i18n="events_up">Upcoming events</span></h4><div id="ev-side"></div><a class="more-link" href="#/events" data-i18n="all_events">All events →</a></div>
+      <div class="side-card"><h4>🔥 <span data-i18n="trending">Trending</span></h4><div id="trending"></div></div>
+      <div class="side-card"><h4 data-i18n="topics">Topics</h4><div class="tags" id="tagcloud"></div></div>
+      <div class="side-card"><h4 data-i18n="support_h">Support independent analysis</h4><p data-i18n="support_p">Join free or become a Supporter.</p>
+        <a class="btn btn-primary" href="#/membership" data-i18n="see_plans">See membership plans</a></div>
+    </aside>
+  </div>
+</section>
+
+<section id="view-article" class="view container hidden"><button class="btn btn-ghost back" id="back-btn" data-i18n="back_all">← All articles</button><div class="article-view" id="article-box"></div></section>
+
+<section id="view-library" class="view container hidden">
+  <div class="page-h"><h1 data-i18n="lib_h">Library</h1><p data-i18n="lib_p"></p></div>
+  <div class="controls"><div class="search"><span class="ico">⌕</span><input id="lib-search" type="search" data-i18n-ph="lib_search" placeholder="Search documents…" aria-label="Search documents"></div><div class="row" id="lib-chips"></div></div>
+  <div id="lib-body"></div></section>
+
+<section id="view-events" class="view container hidden"><div class="page-h"><h1 data-i18n="ev_h">Events</h1><p data-i18n="ev_p"></p></div><div id="ev-body"></div></section>
+
+<section id="view-about" class="view container hidden"><div class="page-h"><h1 data-i18n="about_h">About the forum</h1></div>
+  <div class="article-view" style="margin:0"><div class="prose" id="about-body"></div><div id="about-contact" class="side-card" style="margin-top:24px"></div></div></section>
+
+<section id="view-contact" class="view container hidden"><div class="page-h"><h1 data-i18n="ct_h">Contact us</h1><p data-i18n="ct_p"></p></div>
+  <div class="two-col">
+    <form id="contact-form" class="side-card stack">
+      <div class="form-grid"><input class="input" id="ct-name" data-i18n-ph="your_name" placeholder="Your name" required maxlength="100"><input class="input" id="ct-email" type="email" data-i18n-ph="email_addr" placeholder="Email" required></div>
+      <input class="input" id="ct-subject" data-i18n-ph="ct_subject" placeholder="Subject" maxlength="150">
+      <textarea class="input" id="ct-body" data-i18n-ph="ct_msg" placeholder="Your message" required maxlength="4000" style="min-height:150px"></textarea>
+      <button class="btn btn-primary" type="submit" style="align-self:flex-start" data-i18n="send">Send message</button><div class="msg" id="ct-msg"></div></form>
+    <div class="side-card" id="contact-info"></div></div></section>
+
+<section id="view-membership" class="view container hidden"><div class="page-h"><h1 data-i18n="mem_h">Membership</h1><p data-i18n="mem_p"></p></div><div id="mem-body"></div></section>
+<section id="view-pay" class="view container hidden"><div class="page-h"><h1 data-i18n="pay_h">Your payment</h1></div><div id="pay-body"></div></section>
+<section id="view-account" class="view container hidden"><div class="page-h"><h1 data-i18n="acct_h">Member account</h1></div><div id="acct-body"></div></section>
+</main>
+
+<button class="to-top hidden" id="to-top" aria-label="Back to top" data-i18n-aria="top">↑</button>
+<footer><div class="container">
+  <div>© <span id="year"></span> Horn Polity Forum. <span data-i18n="rights">All rights reserved.</span></div>
+  <div><a href="#/about" data-i18n="nav_about">About</a> · <a href="#/contact" data-i18n="nav_contact">Contact</a> · <a href="/rss.xml">RSS</a> · <a href="/admin" data-i18n="admin">Admin</a></div>
+</div></footer>
+<div id="toasts" aria-live="polite"></div>
+<script src="/static/js/i18n.js"></script>
+<script src="/static/js/app.js"></script>
+</body>
+</html>
